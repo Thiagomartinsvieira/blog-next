@@ -8,6 +8,3 @@ export const getAllPosts = async (query = ''): Promise<PostData[]> => {
   return posts;
 };
 
-export type HomeProps = {
-  posts: PostData[];
-};
