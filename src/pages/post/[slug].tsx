@@ -4,18 +4,14 @@ import { countAllPosts } from '../../data/posts/count-all-posts';
 import { getPost } from '../../data/posts/get-post';
 import { type } from 'os';
 import { PostData } from '../../domain/posts/post';
+import { Post } from '../../containers/post';
 
 export type DynamicPostProps = {
   post: PostData;
 };
 
 const DynamicPost = ({ post }: DynamicPostProps) => {
-  return (
-    <>
-      <p>{post.title}</p>
-      <p dangerouslySetInnerHTML={{ __html: post.content }} />
-    </>
-  );
+  return <Post post={post} />;
 };
 
 export default DynamicPost;
