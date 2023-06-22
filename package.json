@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy:static": "next build && next export"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.22.5",
     "@grncdr/eslint-plugin-react-hooks": "^5.0.0-p30d423311.0",
+    "disqus-react": "^1.1.5",
     "next": "13.4.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
