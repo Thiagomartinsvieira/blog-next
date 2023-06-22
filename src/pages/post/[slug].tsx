@@ -15,7 +15,7 @@ const DynamicPost = ({ post }: DynamicPostProps) => {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <div>Página ainda carregando, por favor aguarde...</div>;
+    return <div>Page still loading, please wait...</div>;
   }
 
   if (!post?.title) {
