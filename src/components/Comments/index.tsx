@@ -1,13 +1,13 @@
 import { DiscussionEmbed } from 'disqus-react';
-import { Container } from './styled';
 import { SITE_URL } from '../../config/app.config';
+import { Container } from './styled';
 
-export type ComentsPros = {
+export type CommentsProps = {
   slug: string;
   title: string;
 };
 
-export const Coments = ({ slug, title }: ComentsPros) => {
+export const Comments = ({ slug, title }: CommentsProps) => {
   return (
     <Container>
       <DiscussionEmbed

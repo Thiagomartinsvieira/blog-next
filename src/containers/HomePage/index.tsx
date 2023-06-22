@@ -25,7 +25,7 @@ export default function HomePage({ posts }: HomePageProps) {
           ))}
         </Container>
       </MainContainer>
-      <Footer/>
+      <Footer />
     </>
   );
 }

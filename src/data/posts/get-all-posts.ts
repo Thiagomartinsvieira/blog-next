@@ -7,4 +7,3 @@ export const getAllPosts = async (query = ''): Promise<PostData[]> => {
   const posts = await fetchJson<PostData[]>(url);
   return posts;
 };
-
