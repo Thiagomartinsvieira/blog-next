@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from 'next/document';
 import { Comments } from '../../components/Comments';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
@@ -15,16 +15,17 @@ export type PostProps = {
   post: PostData;
 };
 
-const Post = ({ post }: PostProps) => {
-  const description = removeHtml(post.content).slice(0, 150);
-
+export const Post = ({ post }: PostProps) => {
   return (
     <>
       <Head>
         <title>
           {post.title} - {SITE_NAME}
         </title>
-        <meta name="description" content={description} />
+        <meta
+          name="description"
+          content={removeHtml(post.content).slice(0, 150)}
+        />
       </Head>
 
       <Header />
