@@ -7,11 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:static": "next build && next export"
+    "deploy:static": "next build && next export",
+    "postbuild": "@netlify/next"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.22.5",
     "@grncdr/eslint-plugin-react-hooks": "^5.0.0-p30d423311.0",
+    "@netlify/next": "^1.4.7",
     "disqus-react": "^1.1.5",
     "next": "13.4.6",
     "react": "18.2.0",
