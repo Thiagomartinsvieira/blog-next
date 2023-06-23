@@ -3,7 +3,7 @@ import { PostData } from '../../../domain/posts/post';
 import { getAllPosts } from '../../../data/posts/get-all-posts';
 import HomePage from '../../../containers/HomePage';
 import { useRouter } from 'next/router';
-import { PaginationData } from '../../../domain/pagination';
+import { PaginationData } from '../../../domain/posts/pagination';
 import { countAllPosts } from '../../../data/posts/count-all-posts';
 
 export type PageProps = {
@@ -18,7 +18,7 @@ export default function Page({ posts, category, pagination }: PageProps) {
   if (router.isFallback) return <div>Carregando...</div>;
   if (!posts.length) return <div>Pagina não encontrtada</div>;
 
-  return <HomePage posts={posts} />;
+  return <HomePage posts={posts} category={category} pagination={pagination} />;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -1,6 +1,6 @@
 export type PaginationData = {
   nextPage: number;
-  previusPage: number;
+  previousPage: number;
   numberOfPosts: number;
   postsPerPage: number;
   category?: string;
