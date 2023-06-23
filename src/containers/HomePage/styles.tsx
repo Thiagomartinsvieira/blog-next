@@ -1,3 +1,4 @@
+import exp from 'constants';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -11,4 +12,10 @@ export const Category = styled.div`
   font-size: ${({ theme }) => theme.font.sizes.large};
   font-weight: bold;
   padding: ${({ theme }) => theme.spacings.medium};
+`;
+
+export const AllPostsLinks = styled.a`
+  display: block;
+  text-align: center;
+  margin: ${({ theme }) => theme.spacings.large} 0;
 `;

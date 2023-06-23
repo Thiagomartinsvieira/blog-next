@@ -1,15 +1,16 @@
 import Head from 'next/head';
-import { Footer } from '../../components/Footer';
+import { Container, Category, AllPostsLinks } from './styles';
+import { PostData } from '../../domain/posts/post';
 import { Header } from '../../components/Header';
 import { MainContainer } from '../../components/MainContainer';
 import { PostCard } from '../../components/PostCard';
-import { PostData } from '../../domain/posts/post';
-import { Container, Category } from './styles';
+import { Footer } from '../../components/Footer';
 import { SITE_NAME } from '../../config/app.config';
 import { PaginationData } from '../../domain/posts/pagination';
 import { Pagination } from '../../components/Pagination';
+import Link from 'next/link';
 
-export type HomePageProps = {
+export type HomePageProps = {f
   posts: PostData[];
   category?: string;
   pagination?: PaginationData;
@@ -23,7 +24,10 @@ export default function HomePage({
   return (
     <>
       <Head>
-        <title>{category ? `${category} - ${SITE_NAME}` : SITE_NAME}</title>
+        <title>
+          {category ? `${category} - ${SITE_NAME}` : SITE_NAME}
+          {pagination?.nextPage && ` - Página ${pagination.nextPage - 1}`}
+        </title>
         <meta name="description" content="Este é meu blog de tecnologia." />
       </Head>
       <Header />
@@ -39,7 +43,12 @@ export default function HomePage({
             />
           ))}
         </Container>
-        <Pagination {...Pagination} />
+        <Pagination {...pagination} />
+        {!pagination?.nextPage && (
+          <Link href="/post/page/[...param]" as="/post/page/1" passHref>
+            <AllPostsLinks>Ver todos os posts</AllPostsLinks>
+          </Link>
+        )}
       </MainContainer>
       <Footer />
     </>
