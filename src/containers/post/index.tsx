@@ -1,4 +1,4 @@
-import Head from 'next/document';
+import Head from 'next/head';
 import { Comments } from '../../components/Comments';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
